@@ -1,5 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
   <GridLayout rows="auto" columns="auto,*">
+    <!--<StackLayout row="0" col="0" alignment="top">
+      <Image id="leftNav" src="~/images/left.png" class="nav"  stretch="aspectFill" />
+    </StackLayout>
+    <Image id="rightNav" src="~/images/right.png" class="nav" row="0" col="1" />-->
     <StackLayout orientation="horizontal" row="0" col="0" class="cell">
       <Button id="prev" text="<" tap="{{ onTap }}" />
       <Border borderRadius="20">
