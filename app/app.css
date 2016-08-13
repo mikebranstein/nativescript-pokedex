@@ -19,16 +19,14 @@ Button {
 .nav {
     font-size: 20;
     font-family: "Flexo-Bold";
-    margin-left: 10;
-    margin-right: 10;
 }
 .nav-id {
     color: white;
-    margin: 3;
+    margin: 5;
 }
 .nav-name {
     color: #616161;
-    margin: 2;
+    margin: 5;
 }
 .nav-arrow {
     color: #616161;

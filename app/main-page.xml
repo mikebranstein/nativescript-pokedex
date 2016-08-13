@@ -5,8 +5,8 @@
       <Image id="prevNav" row="0" col="0" rowSpan="2" colSpan="5"
         src="~/images/left.png" stretch="fill" tap="{{ onTap }}" />
 
-      <StackLayout id="prevNavText" row="0" col="0" rowSpan="2" colSpan="5"  tap="{{ onTap }}" 
-        orientation="horizontal" horizontalAlignment="left" class="nav nav-prev">
+      <StackLayout id="prevNavText" row="0" col="0" colSpan="5"  tap="{{ onTap }}" 
+        orientation="horizontal" horizontalAlignment="center" class="nav nav-prev">
         <Label text="&#xf053;" class="font-awesome nav-arrow" />
         <Label id="prevId" text="{{ prevId }}" tap="{{ onTap }}" class="nav-id" />
         <Label id="prevNavName" text="{{ prevName }}" tap="{{ onTap }}" class="nav-name" />
@@ -16,8 +16,8 @@
       <Image id="nextNav" row="0" col="5" rowSpan="2" colSpan="5"
         src="~/images/right.png" stretch="fill" tap="{{ onTap }}" />
 
-      <StackLayout id="nextNavText" row="0" col="5" rowSpan="2" colSpan="5" tap="{{ onTap }}"
-        orientation="horizontal" horizontalAlignment="right" class="nav nav-next">
+      <StackLayout id="nextNavText" row="0" col="5" colSpan="5" tap="{{ onTap }}"
+        orientation="horizontal" horizontalAlignment="center" class="nav nav-next">
         <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
         <Label id="nextId" text="{{ nextId }}" class="nav-id" />
         <Label text="&#xf054;" class="font-awesome nav-arrow" />
