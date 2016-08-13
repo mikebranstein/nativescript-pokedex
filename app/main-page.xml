@@ -1,9 +1,16 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
-  <StackLayout>
-    <Button id="prev" text="Prev" tap="{{ onTap }}" />
+  <GridLayout rows="auto" columns="auto,*">
+    <StackLayout orientation="horizontal" row="0" col="0" class="cell">
+      <Button id="prev" text="<" tap="{{ onTap }}" />
+      <Border borderRadius="20">
+        <Image id="pokemon" src="{{ imageSource }}" />
+      </Border>
+      <Button id="next" text=">" tap="{{ onTap }}" />
+    </StackLayout>
+    <StackLayout row="0" col="1" class="cell">
+      <Label textWrap="true" text="{{ description }}" class="description" />
+      <Button text="Tell me about it!" tap="{{ readDescription }}" />
+    </StackLayout>
+  </GridLayout>
 
-    <Image src="{{ imageSource }}" />
-
-    <Button id="next" text="Next" tap="{{ onTap }}" />
-  </StackLayout>
 </Page>

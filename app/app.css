@@ -1,1 +1,12 @@
-﻿
+﻿#pokemon {
+    background-color: #EFEFEF;
+}
+.cell {
+    margin: 20;
+}
+Button {
+    font-size: 50;   
+}
+.description {
+    font-size: 22;
+}
