@@ -9,4 +9,63 @@ Button {
 }
 .description {
     font-size: 22;
+    font-family: "Flexo-Regular",Arial, Helvetica, sans-serif;
+}
+.font-awesome {
+    font-family: "FontAwesome", fontawesome-webfont;
+}
+
+
+.nav {
+    font-size: 20;
+    font-family: "Flexo-Bold";
+    margin-left: 10;
+    margin-right: 10;
+}
+.nav-id {
+    color: white;
+    margin: 3;
+}
+.nav-name {
+    color: #616161;
+    margin: 2;
+}
+.nav-arrow {
+    color: #616161;
+    background-color: white;
+    font-size: 16;
+    border-radius: 12;
+    height: 24;
+    width: 24;
+    text-align: center;
+}
+
+#prevNav {
+    margin-right: 5;
+}
+#nextNav {
+    margin-left: 5;
+}
+
+.font-awesome {
+    font-family: "FontAwesome", fontawesome-webfont;
+}
+
+.play {
+    color: #212121;
+    font-size: 24;
+    margin-left: 5;
+}
+
+#id {
+    color: #616161;
+    font-size: 24;
+    font-family: "Flexo-Demi",Arial, Helvetica, sans-serif;
+    margin-left: 5;
+}
+
+#name {
+    color: #212121;
+    font-size: 24;
+    font-family: "Flexo-Demi",Arial, Helvetica, sans-serif;
 }

@@ -1,20 +1,44 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
-  <GridLayout rows="auto" columns="auto,*">
-    <!--<StackLayout row="0" col="0" alignment="top">
-      <Image id="leftNav" src="~/images/left.png" class="nav"  stretch="aspectFill" />
-    </StackLayout>
-    <Image id="rightNav" src="~/images/right.png" class="nav" row="0" col="1" />-->
-    <StackLayout orientation="horizontal" row="0" col="0" class="cell">
-      <Button id="prev" text="<" tap="{{ onTap }}" />
-      <Border borderRadius="20">
-        <Image id="pokemon" src="{{ imageSource }}" />
-      </Border>
-      <Button id="next" text=">" tap="{{ onTap }}" />
-    </StackLayout>
-    <StackLayout row="0" col="1" class="cell">
-      <Label textWrap="true" text="{{ description }}" class="description" />
-      <Button text="Tell me about it!" tap="{{ readDescription }}" />
-    </StackLayout>
-  </GridLayout>
+    <GridLayout rows="3*,2*,45*" columns="*,*,*,*,*,*,*,*,*,*">
 
+      <!-- left nav -->
+      <Image id="prevNav" row="0" col="0" rowSpan="2" colSpan="5"
+        src="~/images/left.png" stretch="fill" tap="{{ onTap }}" />
+
+      <StackLayout id="prevNavText" row="0" col="0" rowSpan="2" colSpan="5"  tap="{{ onTap }}" 
+        orientation="horizontal" horizontalAlignment="left" class="nav nav-prev">
+        <Label text="&#xf053;" class="font-awesome nav-arrow" />
+        <Label id="prevId" text="{{ prevId }}" tap="{{ onTap }}" class="nav-id" />
+        <Label id="prevNavName" text="{{ prevName }}" tap="{{ onTap }}" class="nav-name" />
+      </StackLayout>
+
+      <!-- right nav -->
+      <Image id="nextNav" row="0" col="5" rowSpan="2" colSpan="5"
+        src="~/images/right.png" stretch="fill" tap="{{ onTap }}" />
+
+      <StackLayout id="nextNavText" row="0" col="5" rowSpan="2" colSpan="5" tap="{{ onTap }}"
+        orientation="horizontal" horizontalAlignment="right" class="nav nav-next">
+        <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
+        <Label id="nextId" text="{{ nextId }}" class="nav-id" />
+        <Label text="&#xf054;" class="font-awesome nav-arrow" />
+      </StackLayout>
+
+      <StackLayout orientation="horizontal" row="1" colSpan="10" horizontalAlignment="center">
+        <Label id="name" text="{{ name }}" />
+        <Label id="id" text="{{ id }}" />
+        <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
+      </StackLayout>
+
+      <StackLayout orientation="horizontal" row="2" col="0" colSpan="6" class="cell">
+        <Border borderRadius="20">
+          <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
+        </Border>
+      </StackLayout>
+
+      <StackLayout row="2" col="6" colSpan="4" class="cell">
+        <Label textWrap="true" text="{{ description }}" class="description" />
+        <Button text="Tell me about it!" tap="{{ readDescription }}" />
+      </StackLayout>
+      
+    </GridLayout>
 </Page>
