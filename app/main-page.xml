@@ -29,20 +29,22 @@
         <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
       </StackLayout>
 
+      <!-- content area -->
       <GridLayout rows="auto" columns="*,*" row="2" col="0" colSpan="2">
+
+        <!-- left column -->
         <StackLayout orientation="horizontal" row="0" col="0" class="cell">
           <Border borderRadius="20">
             <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
           </Border>
         </StackLayout>
 
+        <!-- right column -->
         <StackLayout row="0" col="1" class="cell">
           <Label id="description" textWrap="true" text="{{ description }}" class="description" />
           <Button text="Tell me about it!" tap="{{ readDescription }}" />
         </StackLayout>
-
       </GridLayout>
 
-      
     </GridLayout>
 </Page>
