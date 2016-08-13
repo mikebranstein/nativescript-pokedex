@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "nativescript-platform": "^1.0.1",
     "nativescript-texttospeech": "^1.1.1",
     "tns-core-modules": "2.2.0"
   }

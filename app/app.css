@@ -1,15 +1,5 @@
-﻿#pokemon {
-    background-color: #EFEFEF;
-}
-.cell {
-    margin: 10;
-}
-Button {
+﻿Button {
     font-size: 50;   
-}
-.description {
-    font-size: 22;
-    font-family: "Flexo-Regular",Arial, Helvetica, sans-serif;
 }
 .font-awesome {
     font-family: "FontAwesome", fontawesome-webfont;
@@ -55,6 +45,9 @@ Button {
     margin-left: 5;
 }
 
+.cell {
+    margin: 10;
+}
 #id {
     color: #616161;
     font-size: 24;
@@ -66,4 +59,13 @@ Button {
     color: #212121;
     font-size: 24;
     font-family: "Flexo-Demi",Arial, Helvetica, sans-serif;
+}
+#pokemon {
+    background-color: #EFEFEF;
+}
+.description {
+    margin-top: 10;
+    font-size: 22;
+    line-height: 30;
+    font-family: "Flexo-Regular",Arial, Helvetica, sans-serif;
 }
