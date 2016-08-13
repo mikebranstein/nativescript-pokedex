@@ -23,22 +23,26 @@
         <Label text="&#xf054;" class="font-awesome nav-arrow" />
       </StackLayout>
 
-      <StackLayout orientation="horizontal" row="1" colSpan="10" horizontalAlignment="center">
+      <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center">
         <Label id="name" text="{{ name }}" />
         <Label id="id" text="{{ id }}" />
         <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
       </StackLayout>
 
-      <StackLayout orientation="horizontal" row="2" col="0" class="cell">
-        <Border borderRadius="20">
-          <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
-        </Border>
-      </StackLayout>
+      <GridLayout rows="auto" columns="*,*" row="2" col="0" colSpan="2">
+        <StackLayout orientation="horizontal" row="0" col="0" class="cell">
+          <Border borderRadius="20">
+            <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
+          </Border>
+        </StackLayout>
 
-      <StackLayout row="2" col="1" class="cell">
-        <Label id="description" textWrap="true" text="{{ description }}" class="description" />
-        <Button text="Tell me about it!" tap="{{ readDescription }}" />
-      </StackLayout>
+        <StackLayout row="0" col="1" class="cell">
+          <Label id="description" textWrap="true" text="{{ description }}" class="description" />
+          <Button text="Tell me about it!" tap="{{ readDescription }}" />
+        </StackLayout>
+
+      </GridLayout>
+
       
     </GridLayout>
 </Page>
