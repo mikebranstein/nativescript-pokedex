@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
+  <StackLayout>
+    <Button id="prev" text="Prev" tap="{{ onTap }}" />
+
+    <Image src="{{ imageSource }}" />
+
+    <Button id="next" text="Next" tap="{{ onTap }}" />
+  </StackLayout>
+</Page>
