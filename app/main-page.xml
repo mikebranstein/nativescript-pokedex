@@ -41,9 +41,11 @@
 
         <!-- right column -->
         <StackLayout row="0" col="1" class="cell">
+          <!-- description -->
           <Label id="description" textWrap="true" text="{{ description }}" class="description"
             tap="{{ onReadDescription }}" />
 
+          <!-- info -->
           <GridLayout rows="auto,auto,auto,auto" columns="*,*" class="info-container">
             <Label text="Height" row="0" col="0" class="info info-title" />
             <Label text="{{ height }}" row="1" col="0" class="info info-value" />
