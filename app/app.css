@@ -65,7 +65,29 @@
 }
 .description {
     margin-top: 10;
+    margin-bottom: 20;
     font-size: 22;
     line-height: 30;
     font-family: "Flexo-Regular",Arial, Helvetica, sans-serif;
+}
+
+.info-container {
+    background-color: #30a7d7;
+    border-radius: 20;
+    padding: 20;
+    padding-bottom: 5;
+
+    font-family: "Flexo-Medium";
+}
+
+.info-title {
+    margin-bottom: 10;
+    color: white;
+    font-size: 20;
+}
+
+.info-value {
+    margin-bottom: 15;
+    color: #212121;
+    font-size: 24;
 }

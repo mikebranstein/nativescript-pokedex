@@ -59,6 +59,9 @@ var PokedexModel = (function (_super) {
         this.set("name", this.pokedex[this.imageNumber].name);
         this.set("description", this.pokedex[this.imageNumber].description);
         this.set("id", "#" + this.pad(this.imageNumber + 1, 3));
+        this.set("height", "2' 04\"");
+        this.set("category", "Seed");
+        this.set("weight", "15.2 lbs");
 
         // prev
         this.set("prevId", "#" + this.pad(this.prevImageNumber + 1, 3));
@@ -81,7 +84,7 @@ var PokedexModel = (function (_super) {
         tts.speak(this.pokedex[this.imageNumber].name, false, 1.75, 0.5, null);
     };
 
-    PokedexModel.prototype.readDescription = function (args) {
+    PokedexModel.prototype.onReadDescription = function (args) {
         tts.speak(this.pokedex[this.imageNumber].description, false, 1.75, 0.5, null);
     };
 
