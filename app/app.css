@@ -72,6 +72,7 @@
 }
 
 .info-container {
+    margin-bottom: 20;
     background-color: #30a7d7;
     border-radius: 20;
     padding: 20;
@@ -90,4 +91,43 @@
     margin-bottom: 15;
     color: #212121;
     font-size: 24;
+}
+
+.stats {
+    background-color: #a4a4a4;
+    border-radius: 20;
+    padding: 20;
+
+    font-family: "Flexo-Medium";
+}
+
+.stats-title {
+    color: #313131;
+    margin-bottom: 15;
+}
+
+.meter-first, .meter-last {
+    margin-left: 5;
+}
+
+.meter {
+    padding-left: 3;
+    padding-right: 3;
+}
+
+.meter-value {
+    background-color: white;
+    margin-bottom: 4;
+    height: 9;
+}
+
+.active {
+    border-color: #30a7d7;
+}
+
+.meter-label {
+    color: #212121;
+    font-family: "Roboto";
+    text-align: center;
+    font-size: 12;
 }

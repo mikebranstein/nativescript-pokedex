@@ -55,13 +55,18 @@ var PokedexModel = (function (_super) {
 
     PokedexModel.prototype.update = function () {
         // current
-        this.set("imageSource", "~/images/" + this.pokedex[this.imageNumber].fileName);
-        this.set("name", this.pokedex[this.imageNumber].name);
-        this.set("description", this.pokedex[this.imageNumber].description);
+        var pokemon = this.pokedex[this.imageNumber];
+        this.set("imageSource", "~/images/" + pokemon.fileName);
+        this.set("name", pokemon.name);
+        this.set("description", pokemon.description);
         this.set("id", "#" + this.pad(this.imageNumber + 1, 3));
-        this.set("height", "2' 04\"");
-        this.set("category", "Seed");
-        this.set("weight", "15.2 lbs");
+        this.set("height", pokemon.height);
+        this.set("category", pokemon.category);
+        this.set("weight", pokemon.weight);
+        this.set("stats", 
+            [pokemon.hp_stat, pokemon.attack_stat, 
+            pokemon.defense_stat, pokemon.special_attack_stat, 
+            pokemon.special_defense_stat, pokemon.speed_stat]);
 
         // prev
         this.set("prevId", "#" + this.pad(this.prevImageNumber + 1, 3));

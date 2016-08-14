@@ -8,8 +8,8 @@
       <StackLayout id="prevNavText" row="0" col="0" tap="{{ onTap }}" 
         orientation="horizontal" horizontalAlignment="center" class="nav nav-prev">
         <Label text="&#xf053;" class="font-awesome nav-arrow" />
-        <Label id="prevId" text="{{ prevId }}" tap="{{ onTap }}" class="nav-id" />
-        <Label id="prevNavName" text="{{ prevName }}" tap="{{ onTap }}" class="nav-name" />
+        <Label id="prevId" text="{{ prevId }}" class="nav-id" />
+        <Label id="prevNavName" text="{{ prevName }}" class="nav-name" />
       </StackLayout>
 
       <!-- right nav -->
@@ -55,6 +55,101 @@
 
             <Label text="Weight" row="2" col="0" class="info info-title" />
             <Label text="{{ weight }}" row="3" col="0" class="info info-value" />
+          </GridLayout>
+
+          <!-- stats -->
+          <GridLayout rows="auto,auto" columns="auto,*,*,*,*,*,*,auto" class="stats">
+            <Label text="Stats" row="0" col="0" colSpan="8" class="stats-title" />
+
+            <StackLayout row="1" col="0" class="meter-first">
+            </StackLayout>
+
+            <StackLayout id="hpMeter" row="1" col="1" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="HP" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout id="attackMeter" row="1" col="2" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="Attack" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout id="defenseMeter" row="1" col="3" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="Defense" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout id="specialAttackMeter" row="1" col="4" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="Special Attack" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout id="specialDefenseMeter" row="1" col="5" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="Special Defense" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout id="speedMeter" row="1" col="6" class="meter">
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <StackLayout class="meter-value"></StackLayout>
+              <Label text="Speed" textWrap="true" class="meter-label" />
+            </StackLayout>
+
+            <StackLayout row="1" col="7" class="meter-last">
+            </StackLayout>
           </GridLayout>
         </StackLayout>
       </GridLayout>
