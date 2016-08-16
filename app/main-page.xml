@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
 
-    <GridLayout rows="10*,5*,39*" columns="*">
+    <GridLayout rows="7*,5*,39*" columns="*">
 
       <GridLayout rows="*" columns="*,*">
         <StackLayout row="0" col="0" colSpan="2" class="nav-background">
@@ -38,7 +38,7 @@
           </StackLayout>
 
           <StackLayout class="cell">
-          
+
             <!-- description -->
             <Label id="description" textWrap="true" text="{{ description }}" class="description"
               tap="{{ onReadDescription }}" />

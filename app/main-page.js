@@ -2,6 +2,7 @@ var viewModel = require("./pokedex-view-model");
 var colorModule = require("color");
 var animationModule = require("ui/animation");
 var observableModule = require("data/observable");
+var labelModule = require("ui/label");
 var page;
 
 function onLoaded(args) {
@@ -13,14 +14,16 @@ function onLoaded(args) {
             function (args) {
                 if (args.propertyName === "stats") {
                     animateStats(args.value);
-                } else if (args.propertyName === "description") {
-                    // don't know a better way to do this right now, but
-                    // if i setTimeout, it pauses enough to bind the data first
-                    setTimeout(function() {
-                        setDescriptionLineSpacing();
-                    }, 0);
-                }
+                } 
             });
+
+    var descriptionLabel = page.getViewById("description");
+    descriptionLabel.addEventListener(labelModule.Label.propertyChangeEvent, 
+        function(args) {
+            if (args.propertyName === "text") {
+                setDescriptionLineSpacing();
+            }
+    })
 
     // set the line spacing
     setDescriptionLineSpacing();
