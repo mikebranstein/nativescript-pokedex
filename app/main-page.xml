@@ -38,6 +38,7 @@
           </StackLayout>
 
           <StackLayout class="cell">
+          
             <!-- description -->
             <Label id="description" textWrap="true" text="{{ description }}" class="description"
               tap="{{ onReadDescription }}" />
