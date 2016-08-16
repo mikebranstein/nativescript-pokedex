@@ -1,0 +1,159 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded">
+    <GridLayout rows="3*,2*,45*" columns="*,*">
+
+      <!-- left nav -->
+      <Image id="prevNav" row="0" col="0" rowSpan="2"
+        src="~/images/left.png" stretch="fill" tap="{{ onTap }}" />
+
+      <StackLayout id="prevNavText" row="0" col="0" tap="{{ onTap }}" 
+        orientation="horizontal" horizontalAlignment="center" class="nav nav-prev">
+        <Label text="&#xf053;" class="font-awesome nav-arrow" />
+        <Label id="prevId" text="{{ prevId }}" class="nav-id" />
+        <Label id="prevNavName" text="{{ prevName }}" class="nav-name" />
+      </StackLayout>
+
+      <!-- right nav -->
+      <Image id="nextNav" row="0" col="1" rowSpan="2"
+        src="~/images/right.png" stretch="fill" tap="{{ onTap }}" />
+
+      <StackLayout id="nextNavText" row="0" col="1" tap="{{ onTap }}"
+        orientation="horizontal" horizontalAlignment="center" class="nav nav-next">
+        <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
+        <Label id="nextId" text="{{ nextId }}" class="nav-id" />
+        <Label text="&#xf054;" class="font-awesome nav-arrow" />
+      </StackLayout>
+
+      <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center">
+        <Label id="name" text="{{ name }}" />
+        <Label id="id" text="{{ id }}" />
+        <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
+      </StackLayout>
+
+      <ScrollView row="2" col="0" colSpan="2">
+        <!-- content area -->
+        <GridLayout rows="auto" columns="*,*">
+
+          <!-- left column -->
+          <StackLayout orientation="horizontal" row="0" col="0" class="cell">
+            <Border borderRadius="20">
+              <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
+            </Border>
+          </StackLayout>
+
+          <!-- right column -->
+          <StackLayout row="0" col="1" class="cell">
+            <!-- description -->
+            <Label id="description" textWrap="true" text="{{ description }}" class="description"
+              tap="{{ onReadDescription }}" />
+
+            <!-- info -->
+            <GridLayout rows="auto,auto,auto,auto" columns="*,*" class="info-container">
+              <Label text="Height" row="0" col="0" class="info info-title" />
+              <Label text="{{ height }}" row="1" col="0" class="info info-value" />
+
+              <Label text="Category" row="0" col="1" class="info info-title" />
+              <Label text="{{ category }}" row="1" col="1" class="info info-value" />
+
+              <Label text="Weight" row="2" col="0" class="info info-title" />
+              <Label text="{{ weight }}" row="3" col="0" class="info info-value" />
+            </GridLayout>
+
+            <!-- stats -->
+            <GridLayout rows="auto,auto" columns="auto,*,*,*,*,*,*,auto" class="stats">
+              <Label text="Stats" row="0" col="0" colSpan="8" class="stats-title" />
+
+              <StackLayout row="1" col="0" class="meter-first">
+              </StackLayout>
+
+              <StackLayout id="hpMeter" row="1" col="1" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="HP" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout id="attackMeter" row="1" col="2" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="Attack" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout id="defenseMeter" row="1" col="3" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="Defense" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout id="specialAttackMeter" row="1" col="4" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="Special Attack" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout id="specialDefenseMeter" row="1" col="5" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="Special Defense" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout id="speedMeter" row="1" col="6" class="meter">
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <StackLayout class="meter-value"></StackLayout>
+                <Label text="Speed" textWrap="true" class="meter-label" />
+              </StackLayout>
+
+              <StackLayout row="1" col="7" class="meter-last">
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+        </GridLayout>
+      </ScrollView>
+    </GridLayout>
+</Page>
