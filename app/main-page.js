@@ -13,17 +13,28 @@ function onLoaded(args) {
             function (args) {
                 if (args.propertyName === "stats") {
                     animateStats(args.value);
+                } else if (args.propertyName === "description") {
+                    // don't know a better way to do this right now, but
+                    // if i setTimeout, it pauses enough to bind the data first
+                    setTimeout(function() {
+                        setDescriptionLineSpacing();
+                    }, 0);
                 }
             });
 
     // set the line spacing
-    var descriptionLabel = page.getViewById("description");
-    labelLineHeight(descriptionLabel, 10);
+    setDescriptionLineSpacing();
 
     // tell the initial pokemon loaded to animate it's stats
     animateStats(viewModel.pokedexViewModel.stats);
 }
 exports.onLoaded = onLoaded;
+
+function setDescriptionLineSpacing() {
+    console.log("resetting description...");
+    var descriptionLabel = page.getViewById("description");
+    labelLineHeight(descriptionLabel, 10);
+}
 
 function animateStats(meterValues) {
 
