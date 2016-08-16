@@ -1,0 +1,7 @@
+.nav-background {
+    background-color: #DDDDDD;
+}
+#prevNavText, #nextNavText {
+    margin-left: 5;
+    margin-right: 5;
+}
