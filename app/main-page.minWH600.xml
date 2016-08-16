@@ -23,7 +23,8 @@
         <Label text="&#xf054;" class="font-awesome nav-arrow" />
       </StackLayout>
 
-      <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center">
+      <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center"
+        tap="{{ onSayName }}">
         <Label id="name" text="{{ name }}" />
         <Label id="id" text="{{ id }}" />
         <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
