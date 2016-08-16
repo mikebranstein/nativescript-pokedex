@@ -31,7 +31,6 @@ function onLoaded(args) {
 exports.onLoaded = onLoaded;
 
 function setDescriptionLineSpacing() {
-    console.log("resetting description...");
     var descriptionLabel = page.getViewById("description");
     labelLineHeight(descriptionLabel, 10);
 }
