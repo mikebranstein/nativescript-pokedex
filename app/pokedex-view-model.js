@@ -7,7 +7,7 @@ var PokedexModel = (function (_super) {
     function PokedexModel() {
         _super.call(this);
         this.imageNumber = 0;
-        this.prevImageNumber = 269;
+        this.prevImageNumber = 719;
         this.nextImageNumber = 1;
         this.lowerBound = 0;
 
