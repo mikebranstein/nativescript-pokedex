@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
     <GridLayout rows="3*,2*,45*" columns="*,*">
 
       <!-- left nav -->
@@ -20,14 +20,16 @@
         orientation="horizontal" horizontalAlignment="center" class="nav nav-next">
         <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
         <Label id="nextId" text="{{ nextId }}" class="nav-id" />
-        <Label text="{{ 'fa-chevron-right' | fonticon }}" class="font-awesome nav-arrow" />
+        <GridLayout class="test">
+          <Label text="{{ 'fa-chevron-right' | fonticon }}" class="font-awesome nav-arrow" />
+        </GridLayout>
       </StackLayout>
 
       <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center"
         tap="{{ onSayName }}">
         <Label id="name" text="{{ name }}" />
         <Label id="id" text="{{ id }}" />
-        <Button text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play" tap="{{ onSayName }}" />
+        <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play" tap="{{ onSayName }}" />
       </StackLayout>
 
       <ScrollView row="2" col="0" colSpan="2">

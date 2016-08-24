@@ -4,3 +4,9 @@
 .nav {
     font-size: 16;
 }
+Button {
+    background-color: transparent;
+    border-width: 0;
+    border-style: none;
+
+}
