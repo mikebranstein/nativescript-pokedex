@@ -44,6 +44,12 @@
     margin-left: 5;
 }
 
+.play-large {
+    color: #DDDDDD;
+    font-size: 75;
+    text-align: center;
+}
+
 .cell {
     margin: 10;
 }

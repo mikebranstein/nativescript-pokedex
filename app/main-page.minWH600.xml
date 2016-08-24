@@ -43,9 +43,12 @@
 
           <!-- right column -->
           <StackLayout row="0" col="1" class="cell">
-            <!-- description -->
-            <Label id="description" textWrap="true" text="{{ description }}" class="description"
-              tap="{{ onReadDescription }}" />
+            <!-- description with speech icon underlay -->
+            <GridLayout rows="auto" columns="*">
+              <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play-large" />
+              <Label id="description" textWrap="true" text="{{ description }}" class="description"
+                tap="{{ onReadDescription }}" />
+            </GridLayout>
 
             <!-- info -->
             <GridLayout rows="auto,auto,auto,auto" columns="*,*" class="info-container">
