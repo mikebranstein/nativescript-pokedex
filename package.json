@@ -6,10 +6,11 @@
   "nativescript": {
     "id": "org.nativescript.pokedex",
     "tns-ios": {
-      "version": "2.2.0"
+      "version": "2.2.1"
     }
   },
   "dependencies": {
+    "nativescript-fonticon": "^1.1.0",
     "nativescript-platform": "^1.0.1",
     "nativescript-texttospeech": "^1.1.1",
     "tns-core-modules": "2.2.0"

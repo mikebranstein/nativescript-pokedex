@@ -7,7 +7,7 @@
 
       <StackLayout id="prevNavText" row="0" col="0" tap="{{ onTap }}" 
         orientation="horizontal" horizontalAlignment="center" class="nav nav-prev">
-        <Label text="&#xf053;" class="font-awesome nav-arrow" />
+        <Label text="{{ 'fa-chevron-left' | fonticon }}" class="font-awesome nav-arrow" />
         <Label id="prevId" text="{{ prevId }}" class="nav-id" />
         <Label id="prevNavName" text="{{ prevName }}" class="nav-name" />
       </StackLayout>
@@ -20,14 +20,14 @@
         orientation="horizontal" horizontalAlignment="center" class="nav nav-next">
         <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
         <Label id="nextId" text="{{ nextId }}" class="nav-id" />
-        <Label text="&#xf054;" class="font-awesome nav-arrow" />
+        <Label text="{{ 'fa-chevron-right' | fonticon }}" class="font-awesome nav-arrow" />
       </StackLayout>
 
       <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center"
         tap="{{ onSayName }}">
         <Label id="name" text="{{ name }}" />
         <Label id="id" text="{{ id }}" />
-        <Button text="&#xf04b;" class="font-awesome play" tap="{{ onSayName }}" />
+        <Button text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play" tap="{{ onSayName }}" />
       </StackLayout>
 
       <ScrollView row="2" col="0" colSpan="2">
