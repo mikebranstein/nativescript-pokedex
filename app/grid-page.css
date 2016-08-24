@@ -1,0 +1,20 @@
+Page {
+    margin: 20; 
+}
+
+Image {
+    background-color: #EFEFEF;
+    border-radius: 20;
+    padding: 5;
+    margin-bottom: 5;
+}
+
+.id {
+    
+}
+
+.name {
+    color: #212121;
+    font-size: 20;
+    font-family: "Flexo-Demi",Arial, Helvetica, sans-serif;
+}

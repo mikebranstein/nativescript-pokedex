@@ -3,11 +3,21 @@ var colorModule = require("color");
 var animationModule = require("ui/animation");
 var observableModule = require("data/observable");
 var labelModule = require("ui/label");
+var frameModule = require("ui/frame");
 var page;
+
+function onNavigatedTo(args) {
+    var page = args.object;
+    page.bindingContext = page.navigationContext;
+}
 
 function onLoaded(args) {
     page = args.object;
     page.bindingContext = viewModel.pokedexViewModel;
+
+    var sideDrawer = frameModule.topmost().getViewById("sideDrawer");
+    console.log(sideDrawer);
+    // sideDrawer.showDrawer();
 
     viewModel.pokedexViewModel
         .addEventListener(observableModule.Observable.propertyChangeEvent, 

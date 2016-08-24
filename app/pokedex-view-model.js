@@ -21,6 +21,10 @@ var PokedexModel = (function (_super) {
         }.bind(this));
     };
 
+    PokedexModel.prototype.pokedex = function() {
+        return this.pokedex;
+    };
+
     PokedexModel.prototype.pad = function (number, width) {
         width -= number.toString().length;
         if ( width > 0 )
@@ -47,6 +51,16 @@ var PokedexModel = (function (_super) {
         tts.speak(""); // stop speaking
         
         this.imageNumber = this.getImageNumber(this.imageNumber, direction);
+        this.prevImageNumber = this.getImageNumber(this.imageNumber, -1);
+        this.nextImageNumber = this.getImageNumber(this.imageNumber, 1);
+
+        this.update();
+    };
+
+    PokedexModel.prototype.changePokemonTo = function (index) {
+        tts.speak(""); // stop speaking
+        
+        this.imageNumber = index;
         this.prevImageNumber = this.getImageNumber(this.imageNumber, -1);
         this.nextImageNumber = this.getImageNumber(this.imageNumber, 1);
 
