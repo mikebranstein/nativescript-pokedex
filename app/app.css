@@ -26,7 +26,13 @@
     width: 24;
     text-align: center;
 }
-
+.nav-background {
+    background-color: #DDDDDD;
+}
+#prevNavText, #nextNavText {
+    margin-left: 5;
+    margin-right: 5;
+}
 #prevNav {
     margin-right: 5;
 }

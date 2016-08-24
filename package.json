@@ -7,6 +7,9 @@
     "id": "org.nativescript.pokedex",
     "tns-ios": {
       "version": "2.2.1"
+    },
+    "tns-android": {
+      "version": "2.2.0"
     }
   },
   "dependencies": {
@@ -15,5 +18,11 @@
     "nativescript-platform": "^1.0.1",
     "nativescript-texttospeech": "^1.1.1",
     "tns-core-modules": "2.2.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.13.0",
+    "babel-types": "6.13.0",
+    "babylon": "6.9.1",
+    "lazy": "1.0.11"
   }
 }

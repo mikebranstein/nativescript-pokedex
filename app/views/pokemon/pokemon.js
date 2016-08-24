@@ -1,4 +1,3 @@
-var viewModel = require("./pokedex-view-model");
 var colorModule = require("color");
 var animationModule = require("ui/animation");
 var observableModule = require("data/observable");
@@ -7,19 +6,12 @@ var frameModule = require("ui/frame");
 var page;
 
 function onNavigatedTo(args) {
-    var page = args.object;
-    page.bindingContext = page.navigationContext;
+    page.bindingContext = args.object.navigationContext;
 }
 
 function onLoaded(args) {
     page = args.object;
-    page.bindingContext = viewModel.pokedexViewModel;
-
-    var sideDrawer = frameModule.topmost().getViewById("sideDrawer");
-    console.log(sideDrawer);
-    // sideDrawer.showDrawer();
-
-    viewModel.pokedexViewModel
+    page.bindingContext
         .addEventListener(observableModule.Observable.propertyChangeEvent, 
             function (args) {
                 if (args.propertyName === "stats") {
@@ -33,13 +25,13 @@ function onLoaded(args) {
             if (args.propertyName === "text") {
                 setDescriptionLineSpacing();
             }
-    })
+    });
 
     // set the line spacing
     setDescriptionLineSpacing();
 
     // tell the initial pokemon loaded to animate it's stats
-    animateStats(viewModel.pokedexViewModel.stats);
+    animateStats(page.bindingContext.stats);
 }
 exports.onLoaded = onLoaded;
 

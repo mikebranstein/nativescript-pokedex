@@ -19,4 +19,4 @@ function pad(value, width) {
 
 application.resources["pad"] = pad;
 application.resources["fonticon"] = fonticon;
-application.start({ moduleName: "grid-page" });
+application.start({ moduleName: "views/main/main" });

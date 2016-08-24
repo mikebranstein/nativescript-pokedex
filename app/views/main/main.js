@@ -1,4 +1,4 @@
-var viewModel = require("./pokedex-view-model");
+var viewModel = require("~/pokedex-view-model");
 var frameModule = require("ui/frame");
 
 function onLoaded(args) {
@@ -8,16 +8,13 @@ function onLoaded(args) {
 exports.onLoaded = onLoaded;
 
 function onItemTap(args) {
-    console.log(args);
+    viewModel.pokedexViewModel.changePokemonTo(args.index);
 
-    var index = args.index;
-    viewModel.pokedexViewModel.changePokemonTo(index);
-
-    var navigationContext = {
-        moduleName: "main-page",
+    var navigationEntry = {
+        moduleName: "views/pokemon/pokemon",
         bindingContext: viewModel.pokedexViewModel,
         clearHistory: false
     };
-    frameModule.topmost().navigate(navigationContext);
+    frameModule.topmost().navigate(navigationEntry);
 }
 exports.onItemTap = onItemTap;
