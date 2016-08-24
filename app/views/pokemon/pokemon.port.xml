@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" android.actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
     <GridLayout rows="3*,2*,45*" columns="*,*">
 
       <!-- left nav -->
