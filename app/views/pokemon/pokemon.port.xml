@@ -72,7 +72,10 @@
                 <GridLayout rows="*,*" columns="auto" class="type-item">
                   <StackLayout class="{{ value, value | getTypeClass('top') }}" />  
                   <StackLayout class="{{ value, value | getTypeClass('bottom') }}" row="1" />
-                  <Label text="{{ value }}" rowSpan="2" class="type-name" orientation="center" />  
+                  <StackLayout orientation="horizontal" horizontalAlignment="center" verticalAlignment="center">
+                    <Label text="{{ value }}" rowSpan="2" class="type-name type-name-left" orientation="center" tap="{{$parents['Repeater'], $parents['Repeater'].onSayType }}" />  
+                    <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome type-name type-name-right" />
+                  </StackLayout>
                 </GridLayout>
               </Repeater.itemTemplate>
             </Repeater>

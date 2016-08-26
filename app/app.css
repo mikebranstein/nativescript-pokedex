@@ -158,10 +158,13 @@
 .type-name {
     font-size: 18;
     color: white;
+    margin: 5;
+}
+.type-name-left {
     margin-left: 25;
+}
+.type-name-right {
     margin-right: 25;
-    margin-top: 5;
-    margin-bottom: 5;
 }
 
 .top.type-bug { background-color: #729f3f; }

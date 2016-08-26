@@ -138,6 +138,11 @@ var PokedexModel = (function (_super) {
         tts.speak(this.pokedex[this.imageNumber].description, false, 1.75, 0.5, null);
     };
 
+    PokedexModel.prototype.onSayType = function (args) {
+        var text = args.object.text;
+        tts.speak(text, false, 1.75, 0.5, null);
+    };
+
     return PokedexModel;
 })(observable.Observable);
 exports.PokedexModel = PokedexModel;
