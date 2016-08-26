@@ -72,6 +72,7 @@
 #pokemon {
     background-color: #EFEFEF;
     border-radius: 20;
+    margin-bottom: 20;
 }
 .description {
     margin-top: 10;
@@ -219,10 +220,10 @@
 
 .evo {
     background-color: #595959;
-    margin-top: 20;
     padding: 20;
     border-radius: 20;
-    background-image: url('~/images/container_bg.png')
+    background-image: url('~/images/container_bg.png');
+    margin-bottom: 20;
 }
 
 .evo-heading, .evo-name {

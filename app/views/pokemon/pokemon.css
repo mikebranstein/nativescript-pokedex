@@ -10,3 +10,12 @@ Button {
     border-style: none;
 
 }
+.description {
+    font-size: 18;
+}
+.evo-image {
+    border-radius: 10;
+}
+.evo-name, .evo-id {
+    font-size: 14;
+}

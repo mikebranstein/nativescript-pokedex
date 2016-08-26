@@ -35,12 +35,42 @@
         <GridLayout rows="auto" columns="*,*">
 
           <!-- left column -->
-          <StackLayout orientation="horizontal" row="0" col="0" class="cell">
-            <Border borderRadius="20">
-              <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" />
-            </Border>
-          </StackLayout>
+          <StackLayout row="0" col="0" class="cell">
+            <!-- image -->
+            <GridLayout rows="auto" columns="*">
+              <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" row="0" col="0" />
+            </GridLayout>
 
+            <!-- evolution -->
+            <StackLayout class="evo">
+              <Label text="Evolutions" class="evo-heading" colSpan="3" />
+
+              <GridLayout rows="auto" columns="*,auto,*,auto,*">
+                <StackLayout id="evo-first" col="0" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
+                  <Image src="{{ evolution, evolution[0].imageSource }}" class="evo-image" />
+                  <Label text="{{ evolution, evolution[0].name }}" class="evo-name" />
+                  <Label text="{{ evolution, evolution[0].id }}" class="evo-id" />
+                </StackLayout>
+                <StackLayout col="1" verticalAlignment="center">
+                  <Label text="{{ 'fa-chevron-right' | fonticon }}" class="{{ evolution, evolution | getEvolutionClass(1, 'font-awesome evo-arrow') }}" />
+                </StackLayout>
+                <StackLayout id="evo-second" col="2" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
+                  <Image src="{{ evolution, evolution[1].imageSource }}" class="evo-image" />
+                  <Label text="{{ evolution, evolution[1].name }}" class="evo-name" />
+                  <Label text="{{ evolution, evolution[1].id }}" class="evo-id" />
+                </StackLayout>
+                <StackLayout col="3" verticalAlignment="center">
+                  <Label text="{{ 'fa-chevron-right' | fonticon }}" class="{{ evolution, evolution | getEvolutionClass(2, 'font-awesome evo-arrow') }}" />
+                </StackLayout>
+                <StackLayout id="evo-third" col="4" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
+                  <Image src="{{ evolution, evolution[2].imageSource }}" class="evo-image" />
+                  <Label text="{{ evolution, evolution[2].name }}" class="evo-name" />
+                  <Label text="{{ evolution, evolution[2].id }}" class="evo-id" />
+                </StackLayout>
+              </GridLayout>
+            </StackLayout>
+          </StackLayout>
+          
           <!-- right column -->
           <StackLayout row="0" col="1" class="cell">
             <!-- description with speech icon underlay -->
@@ -61,6 +91,22 @@
               <Label text="Weight" row="2" col="0" class="info info-title" />
               <Label text="{{ weight }}" row="3" col="0" class="info info-value" />
             </GridLayout>
+
+            <!-- type -->
+            <Label text="Type" class="type-heading" />
+            <Repeater items="{{ type }}" class="type-types">
+              <Repeater.itemsLayout>
+                <StackLayout orientation="horizontal" />
+              </Repeater.itemsLayout>
+              <Repeater.itemTemplate>
+                <GridLayout rows="*,*" columns="auto" class="type-item">
+                  <StackLayout class="{{ value, value | getTypeClass('top') }}" />  
+                  <StackLayout class="{{ value, value | getTypeClass('bottom') }}" row="1" />
+                  <Label text="{{ value }}" rowSpan="2" class="type-name" orientation="center" />  
+                </GridLayout>
+              </Repeater.itemTemplate>
+            </Repeater>
+
 
             <!-- stats -->
             <GridLayout rows="auto,auto" columns="auto,*,*,*,*,*,*,auto" class="stats">
