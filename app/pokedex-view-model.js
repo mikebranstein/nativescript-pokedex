@@ -82,6 +82,26 @@ var PokedexModel = (function (_super) {
             pokemon.defense_stat, pokemon.special_attack_stat, 
             pokemon.special_defense_stat, pokemon.speed_stat]);
 
+        var types = [];
+        for (var i = 0; i < pokemon.types.length; i++) {
+            types[types.length] = { value: pokemon.types[i] };
+        }
+        this.set("type", types);
+
+        var evolution = [];
+        for (var i = 0; i < pokemon.evolution.length; i++) {
+            evolution[evolution.length] = {
+                imageSource: "~/images/" + pokemon.evolution[i] + ".png",
+                name: this.pokedex[parseInt(pokemon.evolution[i]) - 1].name,
+                id: "#" + pokemon.evolution[i]
+            };
+
+            if (i == 0) this.set("evolution-first", evolution[i]);
+            if (i == 0) this.set("evolution-second", evolution[i]);
+            if (i == 0) this.set("evolution-third", evolution[i]);
+        }
+        this.set("evolution", evolution);
+
         // prev
         this.set("prevId", "#" + this.pad(this.prevImageNumber + 1, 3));
         this.set("prevName", this.pokedex[this.prevImageNumber].name);
@@ -97,6 +117,17 @@ var PokedexModel = (function (_super) {
         } else {
             this.changePokemon(1);
         }
+    };
+
+    PokedexModel.prototype.onEvoTap = function (args) {
+        var id = args.object.id;
+        var index = 0;
+        if (id.includes("first")) index = 0;
+        else if (id.includes("second")) index = 1;
+        else if (id.includes("third")) index = 2;
+
+        var pokemonId = parseInt(this.pokedex[this.imageNumber].evolution[index]);
+        this.changePokemonTo(pokemonId - 1);
     };
 
     PokedexModel.prototype.onSayName = function (args) {

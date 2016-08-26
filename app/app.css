@@ -71,6 +71,7 @@
 }
 #pokemon {
     background-color: #EFEFEF;
+    border-radius: 20;
 }
 .description {
     margin-top: 10;
@@ -139,4 +140,119 @@
     font-family: "Roboto";
     text-align: center;
     font-size: 12;
+}
+
+.type-heading {
+    font-size: 22;
+    font-family: "Flexo-Regular",Arial, Helvetica, sans-serif;
+    margin-bottom: 20;
+}
+.type-types {
+    margin-bottom: 25;
+}
+.type-item {
+    border-radius: 10;
+    margin-right: 20;
+}
+.type-name {
+    font-size: 18;
+    color: white;
+    margin-left: 25;
+    margin-right: 25;
+    margin-top: 5;
+    margin-bottom: 5;
+}
+
+.top.type-bug { background-color: #729f3f; }
+.bottom.type-bug { background-color: #729f3f; }
+
+.top.type-dark { background-color: #707070; }
+.bottom.type-dark { background-color: #707070; }
+
+.top.type-dragon { background-color: #53a4cf; }
+.bottom.type-dragon { background-color: #f16e57; }
+
+.top.type-electric { background-color: #eed535; }
+.bottom.type-electric { background-color: #eed535; }
+
+.top.type-fairy { background-color: #fdb9e9; }
+.bottom.type-fairy { background-color: #fdb9e9; }
+
+.top.type-fighting { background-color: #d56723; }
+.bottom.type-fighting { background-color: #d56723; }
+
+.top.type-fire { background-color: #fd7d24; }
+.bottom.type-fire { background-color: #fd7d24; }
+
+.top.type-flying { background-color: #3dc7ef; }
+.bottom.type-flying { background-color: #bdb9b8; }
+
+.top.type-ghost { background-color: #7b62a3; }
+.bottom.type-ghost { background-color: #7b62a3; }
+
+.top.type-grass { background-color: #9bcc50; }
+.bottom.type-grass { background-color: #9bcc50; }
+
+.top.type-ground { background-color: #f7de3f; }
+.bottom.type-ground { background-color: #ab9842; }
+
+.top.type-ice { background-color: #51c4e7; }
+.bottom.type-ice { background-color: #51c4e7; }
+
+.top.type-normal { background-color: #a4acaf; }
+.bottom.type-normal { background-color: #a4acaf; }
+
+.top.type-poison { background-color: #b97fc9; }
+.bottom.type-poison { background-color: #b97fc9; }
+
+.top.type-psychic { background-color: #f366b9; }
+.bottom.type-psychic { background-color: #f366b9; }
+
+.top.type-rock { background-color: #a38c21; }
+.bottom.type-rock { background-color: #a38c21; }
+
+.top.type-steel { background-color: #9eb7b8; }
+.bottom.type-steel { background-color: #9eb7b8; }
+
+.top.type-water { background-color: #4592c4; }
+.bottom.type-water { background-color: #4592c4; }
+
+.evo {
+    background-color: #595959;
+    margin-top: 20;
+    padding: 20;
+    border-radius: 20;
+    background-image: url('~/images/container_bg.png')
+}
+
+.evo-heading, .evo-name {
+    color: white;
+    font-size: 22;
+    margin-bottom: 10;
+    font-family: "Flexo-Regular", Arial, Helvetica, sans-serif;
+}
+.evo-item {
+    margin: 10;
+    text-align: center;
+}
+.evo-image {
+    background-color: #595959;
+    border-radius: 50;
+    border-width: 3;
+    border-color: white;
+}
+.evo-name {
+    margin-top: 20;
+    font-size: 18;
+}
+.evo-id {
+    font-size: 18;
+    color: #a4acaf;
+}
+.evo-arrow {
+    color: white;
+    font-size: 30;
+}
+.evo-hidden {
+    visibility: collapsed;
 }
