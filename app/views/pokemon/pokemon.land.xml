@@ -1,5 +1,7 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" android:actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
-    <GridLayout rows="auto,auto,*" columns="*,*">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+  xmlns:f="nativescript-fresco"
+  android:actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <GridLayout rows="5*,3*,45*" columns="*,*">
 
       <!-- left nav -->
       <android>
