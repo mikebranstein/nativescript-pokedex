@@ -1,22 +1,40 @@
-
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" 
-      xmlns:gv="nativescript-grid-view" loaded="onLoaded">
+  xmlns:f="nativescript-fresco"
+  xmlns:ui="nativescript-telerik-ui/listview"
+  loaded="onLoaded" android:actionBarHidden="true">
+  
   <Page.actionBar>
     <ActionBar title="Pokedex" />
   </Page.actionBar>
 
   <GridLayout>
-    <gv:GridView items="{{ pokedex }}" verticalSpacing="5" horizantalSpacing="5"
-      colWidth="150" rowHeight="200" itemTap="onItemTap">
-      <gv:GridView.itemTemplate>
-        <GridLayout rows="*,auto" columns="*">
-          <Image src="{{ fileName, '~/images/' + fileName }}" row="0" col="0" />
-          <StackLayout row="1" col="0">
-            <Label text="{{ id, id | pad(3) }}" class="id" />
-            <Label text="{{ name }}" class="name" row="1" col="0" />
-          </StackLayout>
-        </GridLayout>
-      </gv:GridView.itemTemplate>
-    </gv:GridView>
+
+    <ui:RadListView items="{{ _onDemandPokedex }}" 
+      loadOnDemandMode="Auto" loadMoreDataRequested="{{ onLoadMoreItemsRequested }}"
+      selectionBehavior="Press" itemSelecting="onItemSelecting">
+        <ui:RadListView.listViewLayout>
+            <ui:ListViewGridLayout scrollDirection="Vertical" spanCount="3" />
+        </ui:RadListView.listViewLayout>
+        <ui:RadListView.itemTemplate>
+          <GridLayout rows="*,auto" columns="*" class="grid-item">
+            <android>
+              <f:FrescoDrawee class="image"
+                  width="100%"
+                  height="100%"
+                  aspectRatio="1.0"
+                  actualImageScaleType="fitXY"
+                  imageUri="{{ id, id | padWithImageResource(3) }}" />
+            </android>
+            <ios>
+                <Image src="{{ fileName, '~/images/' + fileName }}" class="image" />
+            </ios>
+            <StackLayout row="1">
+              <Label text="{{ id, id | pad(3) }}" class="id" />
+              <Label text="{{ name }}" class="name" row="1" col="0" />
+            </StackLayout>
+          </GridLayout>
+        </ui:RadListView.itemTemplate>
+    </ui:RadListView>
+
   </GridLayout>
 </Page>

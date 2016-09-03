@@ -1,33 +1,45 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" android.actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" android:actionBarHidden="true" loaded="onLoaded" navigatedTo="onNavigatedTo">
     <GridLayout rows="auto,auto,*" columns="*,*">
 
       <!-- left nav -->
-      <Image id="prevNav" row="0" col="0" rowSpan="2"
-        src="~/images/left.png" stretch="fill" tap="{{ onTap }}" />
+      <android>
+        <f:FrescoDrawee width="100%" height="100%" id="prevNav" row="0" col="0" rowSpan="2"
+          imageUri="res://left" actualImageScaleType="fitXY" tap="{{ onTap }}" />
+      </android>
+      <ios>
+        <Image id="prevNav" row="0" col="0" rowSpan="2"
+          src="~/images/left.png" stretch="fill" tap="{{ onTap }}" />
+      </ios>
 
       <StackLayout id="prevNavText" row="0" col="0" tap="{{ onTap }}" 
         orientation="horizontal" horizontalAlignment="center" class="nav nav-prev">
         <Label text="{{ 'fa-chevron-left' | fonticon }}" class="font-awesome nav-arrow" />
-        <Label id="prevId" text="{{ prevId }}" class="nav-id" />
-        <Label id="prevNavName" text="{{ prevName }}" class="nav-name" />
+        <Label id="prevId" text="{{ prevId }}" class="nav-id" textWrap="true" />
+        <Label id="prevNavName" text="{{ prevName }}" class="nav-name" textWrap="true" />
       </StackLayout>
 
       <!-- right nav -->
-      <Image id="nextNav" row="0" col="1" rowSpan="2"
-        src="~/images/right.png" stretch="fill" tap="{{ onTap }}" />
+      <android>
+        <f:FrescoDrawee width="100%" height="100%" id="nextNav" row="0" col="1" rowSpan="2"
+          imageUri="res://right" actualImageScaleType="fitXY" tap="{{ onTap }}" />
+      </android>
+      <ios>
+        <Image id="nextNav" row="0" col="1" rowSpan="2"
+          src="~/images/right.png" stretch="fill" tap="{{ onTap }}" />
+      </ios>
 
       <StackLayout id="nextNavText" row="0" col="1" tap="{{ onTap }}"
         orientation="horizontal" horizontalAlignment="center" class="nav nav-next">
-        <Label id="nextNavName" text="{{ nextName }}" class="nav-name" />
-        <Label id="nextId" text="{{ nextId }}" class="nav-id" />
+        <Label id="nextNavName" text="{{ nextName }}" class="nav-name" textWrap="true" />
+        <Label id="nextId" text="{{ nextId }}" class="nav-id" textWrap="true" />
         <Label text="{{ 'fa-chevron-right' | fonticon }}" class="font-awesome nav-arrow" />
       </StackLayout>
 
       <StackLayout orientation="horizontal" row="1" colSpan="2" horizontalAlignment="center"
         tap="{{ onSayName }}">
-        <Label id="name" text="{{ name }}" />
-        <Label id="id" text="{{ id }}" />
-        <Button text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play" tap="{{ onSayName }}" />
+        <Label id="name" text="{{ name }}" textWrap="true" />
+        <Label id="id" text="{{ id }}" textWrap="true" />
+        <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play" tap="{{ onSayName }}" />
       </StackLayout>
 
       <ScrollView row="2" col="0" colSpan="2">
@@ -38,7 +50,14 @@
           <StackLayout row="0" col="0" class="cell">
             <!-- image -->
             <GridLayout rows="auto" columns="*">
-              <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" row="0" col="0" />
+              <android>
+                <f:FrescoDrawee id="pokemon" width="100%" height="100%" aspectRatio="1.0"
+                  row="0" col="0" verticalAlignment="top"
+                  imageUri="{{ imageSourceAndroid }}" actualImageScaleType="fitXY" />
+              </android>
+              <ios>
+                <Image id="pokemon" src="{{ imageSource }}" stretch="aspectFit" row="0" col="0" />
+              </ios>
             </GridLayout>
 
             <!-- evolution -->
@@ -47,7 +66,14 @@
 
               <GridLayout rows="auto" columns="*,auto,*,auto,*">
                 <StackLayout id="evo-first" col="0" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
-                  <Image src="{{ evolution, evolution[0].imageSource }}" class="evo-image" />
+                  <android>
+                    <f:FrescoDrawee width="100%" height="100%" aspectRatio="1.0" class="evo-image" roundAsCircle="true"
+                      verticalAlignment="top"
+                      imageUri="{{ evolution, evolution[0].imageSourceAndroid }}" actualImageScaleType="fitXY" />
+                  </android>
+                  <ios>
+                    <Image src="{{ evolution, evolution[0].imageSource }}" class="evo-image" />
+                  </ios>
                   <Label text="{{ evolution, evolution[0].name }}" class="evo-name" />
                   <Label text="{{ evolution, evolution[0].id }}" class="evo-id" />
                 </StackLayout>
@@ -55,7 +81,14 @@
                   <Label text="{{ 'fa-chevron-right' | fonticon }}" class="{{ evolution, evolution | getEvolutionClass(1, 'font-awesome evo-arrow') }}" />
                 </StackLayout>
                 <StackLayout id="evo-second" col="2" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
-                  <Image src="{{ evolution, evolution[1].imageSource }}" class="evo-image" />
+                  <android>
+                    <f:FrescoDrawee width="100%" height="100%" aspectRatio="1.0" class="evo-image" roundAsCircle="true"
+                      verticalAlignment="top"
+                      imageUri="{{ evolution, evolution[1].imageSourceAndroid }}" actualImageScaleType="fitXY" />
+                  </android>
+                  <ios>
+                    <Image src="{{ evolution, evolution[1].imageSource }}" class="evo-image" />
+                  </ios>
                   <Label text="{{ evolution, evolution[1].name }}" class="evo-name" />
                   <Label text="{{ evolution, evolution[1].id }}" class="evo-id" />
                 </StackLayout>
@@ -63,7 +96,14 @@
                   <Label text="{{ 'fa-chevron-right' | fonticon }}" class="{{ evolution, evolution | getEvolutionClass(2, 'font-awesome evo-arrow') }}" />
                 </StackLayout>
                 <StackLayout id="evo-third" col="4" class="evo-item" horizontalAlignment="center" tap="{{ onEvoTap }}">
-                  <Image src="{{ evolution, evolution[2].imageSource }}" class="evo-image" />
+                  <android>
+                    <f:FrescoDrawee width="100%" height="100%" aspectRatio="1.0" class="evo-image" roundAsCircle="true"
+                      verticalAlignment="top"
+                      imageUri="{{ evolution, evolution[2].imageSourceAndroid }}" actualImageScaleType="fitXY" />
+                  </android>
+                  <ios>
+                    <Image src="{{ evolution, evolution[2].imageSource }}" class="evo-image" />
+                  </ios>
                   <Label text="{{ evolution, evolution[2].name }}" class="evo-name" />
                   <Label text="{{ evolution, evolution[2].id }}" class="evo-id" />
                 </StackLayout>
@@ -75,7 +115,7 @@
           <StackLayout row="0" col="1" class="cell">
             <!-- description with speech icon underlay -->
             <GridLayout rows="auto" columns="*">
-              <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play-large" />
+              <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome play-large" verticalAlignment="center" />
               <Label id="description" textWrap="true" text="{{ description }}" class="description"
                 tap="{{ onReadDescription }}" />
             </GridLayout>
@@ -103,13 +143,15 @@
                   <StackLayout class="{{ value, value | getTypeClass('top') }}" />  
                   <StackLayout class="{{ value, value | getTypeClass('bottom') }}" row="1" />
                   <StackLayout orientation="horizontal" horizontalAlignment="center" verticalAlignment="center">
-                    <Label text="{{ value }}" rowSpan="2" class="type-name type-name-left" orientation="center" tap="{{$parents['Repeater'], $parents['Repeater'].onSayType }}" />  
-                    <Label text="{{ 'fa-volume-up' | fonticon }}" class="font-awesome type-name type-name-right" />
+                    <Label text="{{ value }}" rowSpan="2" 
+                      class="type-name type-name-left" orientation="center" 
+                      tap="{{$parents['Repeater'], $parents['Repeater'].onSayType }}" verticalAlignment="center" />  
+                    <Label text="{{ 'fa-volume-up' | fonticon }}" 
+                      class="font-awesome type-name type-name-right" verticalAlignment="center" />
                   </StackLayout>
                 </GridLayout>
               </Repeater.itemTemplate>
             </Repeater>
-
 
             <!-- stats -->
             <GridLayout rows="auto,auto" columns="auto,*,*,*,*,*,*,auto" class="stats">

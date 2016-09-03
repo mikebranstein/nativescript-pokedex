@@ -1,24 +1,62 @@
 var observable = require("data/observable");
+var observableArray = require("data/observable-array");
+var listViewModule = require("nativescript-telerik-ui/listview")
 var fs = require("file-system");
 var tts = require("nativescript-texttospeech");
 
 var PokedexModel = (function (_super) {
     __extends(PokedexModel, _super);
+
+    function speakText(text) {
+        if (nsPlatform.ios) {
+            // ios
+            tts.speak(text, false, 1.75, 0.5, null);
+        } else {
+            // android
+            tts.speak(text, false, 0.75, 0.9, null);
+        }
+    };
+
     function PokedexModel() {
         _super.call(this);
         this.imageNumber = 0;
         this.prevImageNumber = 719;
         this.nextImageNumber = 1;
         this.lowerBound = 0;
+        this._onDemandPokedex = new observableArray.ObservableArray();
+        this._numberOfAddedItems = 0;
 
         var appFolder = fs.knownFolders.currentApp();
         var file = appFolder.getFile("pokedex.json");
 
         file.readText("ASCII").then(function(content) {
             this.pokedex = JSON.parse(content);
+            for (var i = 0; i < 10; i++) {
+                this._onDemandPokedex.push(this.pokedex[i]);
+                this._numberOfAddedItems++;
+            }
         }.bind(this)).then(function () {
             this.update();
         }.bind(this));
+    };
+
+    PokedexModel.prototype.onLoadMoreItemsRequested = function(args) {
+        console.log("requesting more!");
+        var that = new WeakRef(this);
+        var listView = args.object;
+        var initialNumberOfItems = that.get()._numberOfAddedItems;
+        for (var i = that.get()._numberOfAddedItems; i < initialNumberOfItems + 25; i++) {
+            if (i > this.pokedex.length - 1) {
+                listView.loadOnDemandMode = listViewModule.ListViewLoadOnDemandMode[listViewModule.ListViewLoadOnDemandMode.None];
+                break;
+            }
+            that.get()._onDemandPokedex.push(that.get().pokedex[i]);
+            that.get()._numberOfAddedItems++;
+        }
+
+        listView.notifyLoadOnDemandFinished();
+
+        args.returnValue = true;        
     };
 
     PokedexModel.prototype.pokedex = function() {
@@ -71,6 +109,7 @@ var PokedexModel = (function (_super) {
         // current
         var pokemon = this.pokedex[this.imageNumber];
         this.set("imageSource", "~/images/" + pokemon.fileName);
+        this.set("imageSourceAndroid", "http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + this.pad(this.imageNumber + 1, 3) + ".png");
         this.set("name", pokemon.name);
         this.set("description", pokemon.description);
         this.set("id", "#" + this.pad(this.imageNumber + 1, 3));
@@ -92,6 +131,7 @@ var PokedexModel = (function (_super) {
         for (var i = 0; i < pokemon.evolution.length; i++) {
             evolution[evolution.length] = {
                 imageSource: "~/images/" + pokemon.evolution[i] + ".png",
+                imageSourceAndroid: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon.evolution[i] + ".png",
                 name: this.pokedex[parseInt(pokemon.evolution[i]) - 1].name,
                 id: "#" + pokemon.evolution[i]
             };
@@ -131,16 +171,15 @@ var PokedexModel = (function (_super) {
     };
 
     PokedexModel.prototype.onSayName = function (args) {
-        tts.speak(this.pokedex[this.imageNumber].name, false, 1.75, 0.5, null);
+        speakText(this.pokedex[this.imageNumber].name);
     };
 
     PokedexModel.prototype.onReadDescription = function (args) {
-        tts.speak(this.pokedex[this.imageNumber].description, false, 1.75, 0.5, null);
+        speakText(this.pokedex[this.imageNumber].description);
     };
 
     PokedexModel.prototype.onSayType = function (args) {
-        var text = args.object.text;
-        tts.speak(text, false, 1.75, 0.5, null);
+        speakText(args.object.text);
     };
 
     return PokedexModel;

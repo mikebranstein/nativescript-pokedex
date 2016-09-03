@@ -7,8 +7,8 @@ function onLoaded(args) {
 }
 exports.onLoaded = onLoaded;
 
-function onItemTap(args) {
-    viewModel.pokedexViewModel.changePokemonTo(args.index);
+function onItemSelecting(args) {
+    viewModel.pokedexViewModel.changePokemonTo(args.itemIndex);
 
     var navigationEntry = {
         moduleName: "views/pokemon/pokemon",
@@ -17,4 +17,4 @@ function onItemTap(args) {
     };
     frameModule.topmost().navigate(navigationEntry);
 }
-exports.onItemTap = onItemTap;
+exports.onItemSelecting = onItemSelecting;

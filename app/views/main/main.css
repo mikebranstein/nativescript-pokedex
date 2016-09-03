@@ -2,19 +2,24 @@ Page {
     margin: 20; 
 }
 
-Image {
+.image {
     background-color: #EFEFEF;
     border-radius: 20;
-    padding: 5;
     margin-bottom: 5;
 }
 
-.id {
-    
+.name, .id {
+    text-align: center;
 }
 
 .name {
     color: #212121;
     font-size: 20;
     font-family: "Flexo-Demi",Arial, Helvetica, sans-serif;
+}
+
+.grid-item {
+    margin: 5;
+    height: 250;
+    width: 200;
 }

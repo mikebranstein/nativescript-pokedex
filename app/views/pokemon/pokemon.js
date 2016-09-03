@@ -140,10 +140,4 @@ function labelLineHeight(nsLabel, amount) {
         attributedString.addAttributeValueRange(NSParagraphStyleAttributeName, paragraphStyle, range);
         label.attributedText = attributedString;
     }
-    if(nsPlatform.android){
-        var label = nsLabel.android;
-        //Default spacing is 20% of text size
-        //setLineSpacing(add,multiplyby);
-        label.setLineSpacing(amount, 1);
-    }   
 }
