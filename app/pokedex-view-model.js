@@ -31,7 +31,7 @@ var PokedexModel = (function (_super) {
 
         file.readText("ASCII").then(function(content) {
             this.pokedex = JSON.parse(content);
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 12; i++) {
                 this._onDemandPokedex.push(this.pokedex[i]);
                 this._numberOfAddedItems++;
             }
@@ -45,7 +45,8 @@ var PokedexModel = (function (_super) {
         var that = new WeakRef(this);
         var listView = args.object;
         var initialNumberOfItems = that.get()._numberOfAddedItems;
-        for (var i = that.get()._numberOfAddedItems; i < initialNumberOfItems + 25; i++) {
+        for (var i = that.get()._numberOfAddedItems; i < initialNumberOfItems + 24; i++) {
+            console.log(i);
             if (i > this.pokedex.length - 1) {
                 listView.loadOnDemandMode = listViewModule.ListViewLoadOnDemandMode[listViewModule.ListViewLoadOnDemandMode.None];
                 break;

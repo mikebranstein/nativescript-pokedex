@@ -13,7 +13,12 @@
       loadOnDemandMode="Auto" loadMoreDataRequested="{{ onLoadMoreItemsRequested }}"
       selectionBehavior="Press" itemSelecting="onItemSelecting">
         <ui:RadListView.listViewLayout>
+          <android>
             <ui:ListViewGridLayout scrollDirection="Vertical" spanCount="4" />
+          </android>
+          <ios>
+            <ui:ListViewGridLayout scrollDirection="Vertical" spanCount="4" itemHeight="300" />
+          </ios>
         </ui:RadListView.listViewLayout>
         <ui:RadListView.itemTemplate>
           <GridLayout rows="*,auto" columns="*" class="grid-item">
